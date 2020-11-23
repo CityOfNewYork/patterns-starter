@@ -1,0 +1,34 @@
+doctype html
+html lang='en'
+  head
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+
+    title My Patterns
+
+    link rel='stylesheet' href='css/default.css'
+
+  body
+    header
+      h1 My Patterns
+
+    main
+      = content('main')
+
+    footer
+      - let date = new Date();
+      - let opts = {year: 'numeric', month: 'long', day: 'numeric'};
+      p = `Last updated ${date.toLocaleDateString('en-US', opts)}`
+
+    script src='js/default.js'
+
+    javascript:
+      let MyPatterns = new Default();
+
+    = content('scripts')
+
+    / The reload script. This should not be compile during production builds
+    / @source https://www.npmjs.com/package/reload
+    - if this.process.env.NODE_ENV !== 'production'
+      script src='/reload/reload.js'

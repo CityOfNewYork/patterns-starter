@@ -1,0 +1,22 @@
+= extend('/slm/layouts/default')
+
+- title = 'Accordion'
+
+= content('main')
+  section class='bc-white p-4'
+    h2 = title
+
+    == this.include('components/accordion/accordion.md');
+
+    h3 Demonstration
+
+    == this.include('components/accordion/accordion.slm');
+
+    h3 Markup
+
+    pre class='p-4'
+      = this.include('components/accordion/accordion.slm');
+
+= content('scripts')
+  javascript:
+    MyPatterns.accordion();

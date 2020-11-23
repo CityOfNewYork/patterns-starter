@@ -1,0 +1,5 @@
+/ Accordion
+
+/ container
+div class='c-accordion'
+  / pattern contents
