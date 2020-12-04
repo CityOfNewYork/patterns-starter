@@ -11,6 +11,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "create-pttrn-starter": "pttrn scaffold",
     "start": "cross-env NODE_ENV=development cross-env PORT=7070 concurrently \"pttrn -w\" \"pttrn serve -w\" -p \"none\"",
     "version": "pttrn default && git add .",
     "prepublishOnly": "git push && git push --tags",
