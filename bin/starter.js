@@ -25,7 +25,7 @@ async function run(command){
  */
 async function main() {
   try {
-    console.log(`Setting up you new Patterns Project! Please wait...`);
+    console.log(`Setting up your new Patterns Project! Please wait...`);
 
     await run(`npm i @nycopportunity/pttrn`);
 
