@@ -1,5 +1,5 @@
 {
-  "name": "@nycopportunity/pttrn-starter",
+  "name": "@nycopportunity/create-pttrn-starter",
   "nice": "Patterns Starter",
   "version": "1.0.0",
   "description": "A Pattern CLI starter project",
@@ -10,6 +10,7 @@
     "url": "https://github.com/CityOfNewYork/patterns-starter.git"
   },
   "main": "index.js",
+  "bin": "bin/starter.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development cross-env PORT=7070 concurrently \"pttrn -w\" \"pttrn serve -w\" -p \"none\"",
     "version": "pttrn default && git add .",
@@ -17,6 +18,6 @@
     "publish": "cross-env NODE_ENV=production pttrn publish"
   },
   "devDependencies": {
-    "@nycopportunity/pttrn": "file:../nyco-patterns-framework"
+    "@nycopportunity/pttrn": "^1.0.0"
   }
 }
