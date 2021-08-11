@@ -4,11 +4,11 @@
  * Installs the patterns and calls the scaffold command
  */
 
-const util = require("util");
-const exec = util.promisify(require("child_process").exec);
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 
 /**
- * Execute the passed command 
+ * Execute the passed command
  */
 async function run(command){
   try {
@@ -25,17 +25,23 @@ async function run(command){
  */
 async function main() {
   try {
-    console.log(`Setting up your new Patterns Project! Please wait...`);
+    console.log(`Installing @nycopportunity/pttrn...`);
 
     await run(`npm i @nycopportunity/pttrn`);
 
-    await run(`npx pttrn scaffold`);
+    console.log(`Scaffolding the project...`);
 
-    console.log(`You're all set!`);
+    await run(`npx pttrn scaffold`); // scaffold the project
+
+    console.log(`Running the initial build...`);
+
+    await run(`npx pttrn`); // create the initial build
+
+    console.log(`You're all set! Add the recommended npm scripts https://github.com/CityOfNewYork/patterns-cli#npm-scripts to your package.json then run "npm start"`);
 
   } catch (error) {
     console.log(error);
   }
 }
 
-main()
+main();
